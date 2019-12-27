@@ -766,7 +766,7 @@ Widget sample8(BuildContext context) {
       height: MediaQuery.of(context).size.height / 2,
       width: MediaQuery.of(context).size.width,
       child: BezierChart(
-        bezierChartScale: BezierChartScale.HOURLY,
+        bezierChartScale: BezierChartScale.MINUTELY,
         fromDate: fromDate,
         toDate: toDate,
         selectedDate: toDate,

@@ -528,9 +528,12 @@ class BezierChartState extends State<BezierChart>
           } else if (_currentBezierChartScale == BezierChartScale.WEEKLY) {
             key =
                 "${dataPoint.xAxis.year},${dataPoint.xAxis.month.toString().padLeft(2, '0')},${dataPoint.xAxis.day.toString().padLeft(2, '0')}";
-          } else {
+          } else if (_currentBezierChartScale == BezierChartScale.HOURLY) {
             key =
                 "${dataPoint.xAxis.year},${dataPoint.xAxis.month.toString().padLeft(2, '0')},${dataPoint.xAxis.day.toString().padLeft(2, '0')},${dataPoint.xAxis.hour.toString().padLeft(2, '0')}";
+          } else {
+            key =
+                "${dataPoint.xAxis.year},${dataPoint.xAxis.month.toString().padLeft(2, '0')},${dataPoint.xAxis.day.toString().padLeft(2, '0')},${dataPoint.xAxis.hour.toString().padLeft(2, '0')},${dataPoint.xAxis.minute.toString().padLeft(2, '0')}";
           }
 
           //support aggregations for y axis
