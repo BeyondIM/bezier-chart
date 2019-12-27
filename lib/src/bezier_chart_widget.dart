@@ -1597,7 +1597,7 @@ class _BezierChartPainter extends CustomPainter {
     if (scale == BezierChartScale.CUSTOM) {
       return "${formatAsIntOrDouble(dataPoint.value)}\n";
     } else if (scale == BezierChartScale.MINUTELY) {
-      final dateFormat = intl.DateFormat('HH:mm\n');
+      final dateFormat = intl.DateFormat('y-MM-dd\nHH:mm\n');
       return "${dateFormat.format(dataPoint.xAxis as DateTime)}";
     } else if (scale == BezierChartScale.HOURLY) {
       final dateFormat = intl.DateFormat('HH:mm\n');
