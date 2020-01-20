@@ -1602,10 +1602,10 @@ class _BezierChartPainter extends CustomPainter {
     if (scale == BezierChartScale.CUSTOM) {
       return "${formatAsIntOrDouble(dataPoint.value)}\n";
     } else if (scale == BezierChartScale.MINUTELY) {
-      time = dataPoint.xAxis as DateTime;
-      if (time.minute == 0 && time.second == 0) {
+      DateTime _time = dataPoint.xAxis as DateTime;
+      if (_time.minute == 0 && _time.second == 0) {
         final dateFormat = intl.DateFormat('MM/dd\nHH:mm\n');
-        return "${dateFormat.format(dataPoint.xAxis as DateTime)}";
+        return "${dateFormat.format(_time)}";
       } else {
         return "";
       }
