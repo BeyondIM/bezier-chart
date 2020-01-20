@@ -384,7 +384,7 @@ class BezierChartState extends State<BezierChart>
           constraints.maxWidth - 2 * horizontalPadding;
     } else {
       if (scale == BezierChartScale.MINUTELY) {
-        horizontalSpacing = constraints.maxWidth / 120;
+        horizontalSpacing = constraints.maxWidth / 30;
         return _xAxisDataPoints.length * (horizontalSpacing * _currentScale) -
             horizontalPadding / 2;
       } else if (scale == BezierChartScale.HOURLY) {
