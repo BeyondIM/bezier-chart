@@ -1605,7 +1605,7 @@ class _BezierChartPainter extends CustomPainter {
       time = dataPoint.xAxis as DateTime;
       if (time.minute == 0 && time.second == 0) {
         final dateFormat = intl.DateFormat('MM/dd\nHH:mm\n');
-        return "${dateFormat.format(time)}";
+        return "${dateFormat.format($time)}";
       } else {
         return "";
       }
