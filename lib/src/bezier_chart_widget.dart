@@ -384,7 +384,7 @@ class BezierChartState extends State<BezierChart>
           constraints.maxWidth - 2 * horizontalPadding;
     } else {
       if (scale == BezierChartScale.MINUTELY) {
-        horizontalSpacing = constraints.maxWidth / 30;
+        horizontalSpacing = constraints.maxWidth / 60;
         return _xAxisDataPoints.length * (horizontalSpacing * _currentScale) -
             horizontalPadding / 2;
       } else if (scale == BezierChartScale.HOURLY) {
@@ -1602,8 +1602,13 @@ class _BezierChartPainter extends CustomPainter {
     if (scale == BezierChartScale.CUSTOM) {
       return "${formatAsIntOrDouble(dataPoint.value)}\n";
     } else if (scale == BezierChartScale.MINUTELY) {
-      final dateFormat = intl.DateFormat('MM/dd\nHH:mm\n');
-      return "${dateFormat.format(dataPoint.xAxis as DateTime)}";
+      time = dataPoint.xAxis as DateTime;
+      if (time.minute == 0 && time.second == 0) {
+        final dateFormat = intl.DateFormat('MM/dd\nHH:mm\n');
+        return "${dateFormat.format(time)}";
+      } else {
+        return "";
+      }
     } else if (scale == BezierChartScale.HOURLY) {
       final dateFormat = intl.DateFormat('HH:mm\n');
       return "${dateFormat.format(dataPoint.xAxis as DateTime)}";
