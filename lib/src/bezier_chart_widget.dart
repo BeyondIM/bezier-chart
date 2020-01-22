@@ -297,7 +297,7 @@ class BezierChartState extends State<BezierChart>
         final tempDate = widget.fromDate.add(Duration(minutes:(i+5)));
         final newDate = DateTime(tempDate.year, tempDate.month, tempDate.day, tempDate.hour, tempDate.minute, 0);
         _xAxisDataPoints.add(DataPoint<DateTime>(value: (i * 5).toDouble(), xAxis: newDate));
-        _checkMissingValues(newDate);
+//        _checkMissingValues(newDate);
       }
 
     } else if (scale == BezierChartScale.HOURLY) {
